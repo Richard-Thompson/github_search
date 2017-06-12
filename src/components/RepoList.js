@@ -5,7 +5,7 @@ class RepoList extends Component {
   render() {
 
     let filteredRepos = this.props.repos.filter((repo) => {
-       return repo.name.indexOf(this.props.searchTerm) !== -1;
+       return repo.name.toLowerCase().indexOf(this.props.searchTerm) !== -1;
       
     });
    
