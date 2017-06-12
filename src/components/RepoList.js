@@ -16,6 +16,17 @@ class RepoList extends Component {
     
     return (
       <div>
+      {this.filteredOrNot(sortedRepos)}
+      </div>
+    )
+  }
+
+  filteredOrNot (sortedRepos) {
+    if(sortedRepos.length === 0){
+      return (<div className="no-repos">Richard-Thompson doesn't have any repositories that match.</div>);
+    }
+    else{
+      return (<div>
         {sortedRepos.map((repo, i) => {
             return (<Repo
               description={repo.description}
@@ -29,16 +40,7 @@ class RepoList extends Component {
               forks={repo.forks}
               avatar={repo.avatar}/>)
           })}
-      </div>
-    )
-  }
-
-  filteredOrNot () {
-    if(this.props.searchTerm === ''){
-      return repos;
-    }
-    else{
-      return filteredRepos;
+      </div>);
     }
   }
    
