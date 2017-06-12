@@ -11,6 +11,7 @@ import 'font-awesome/css/font-awesome.css';
 
 import App from './components/App'
 import ProfilePage from './components/ProfilePage';
+import RepoPage from './components/RepoPage'
 import reducer from './reducer/reducer'
 
 const logger = createLogger();
@@ -21,6 +22,7 @@ ReactDOM.render(<Provider store={store}>
                   <Router history={browserHistory}>
                     <Route path='/' component={App}>
                       <IndexRoute component={ProfilePage}/>
+                      <Route path='/:user/:repo' component={RepoPage}/>
                     </Route>
                   </Router>
                 </Provider>
