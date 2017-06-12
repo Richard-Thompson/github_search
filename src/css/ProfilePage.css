@@ -1,0 +1,96 @@
+.container{
+  display: flex;
+  align-items: left;
+  margin-top:20px;
+  margin-left:5px;
+}
+
+.user{
+  border: 2px solid deeppink;
+  width: 230px;
+  margin-left:2%;
+}
+.user-avatar{
+  width:230px;
+  height:230px;
+}
+.name{
+  width:230px;
+  padding-top:8px;
+  padding-bottom:8px;
+}
+p.bio{
+color:#0382EF;
+padding-bottom:16px;
+}
+.bio:hover{
+  color: #0382EF;
+  text-decoration: underline;
+}
+.edit-profile{
+  width:228px;
+ margin-bottom:15px;
+}
+.space{
+  border-top: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
+  width:230px;
+  height:30px;
+  margin-bottom:15px;
+}
+p strong{
+  font-weight: bold;
+}
+.org-img{
+  width:35px;
+  height:35px;
+}
+
+
+.repos{
+  width: 660px;
+  margin-left: 20px;
+  border: 2px solid blue;
+}
+div.subnav{
+  display: inline-flex;
+}
+.tab{
+  padding:20px;
+  color:grey;
+}
+.tab:hover{
+  color:black;
+}
+.is-active{
+   border-bottom:3px solid #E36209;
+}
+.search{
+ width:660px;
+ padding-top:20px;
+ padding-bottom:20px;
+ border-top:1px solid lightgray;
+ border-bottom:1px solid lightgray
+}
+.repo-search-box{
+  background-color: white;
+  color:lightgray;
+  width:380px;
+  height:40px;
+  border:1px solid lightgray;
+  border-radius: 5px;
+  padding-left:10px;
+}
+.repo-search-box:hover{
+  border: 1px solid #2188FF;
+  box-shadow: 2px #B3D1F3;
+}
+.button{
+  background-color: #f2f4f7;
+}
+.button:hover{
+  background-color: #ECF0F4;
+}
+.repo-list{
+  border: 2px solid red;
+}
