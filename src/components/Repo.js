@@ -10,25 +10,31 @@ class Repo extends Component {
       const lastUpdate = newDate.diff(oldDate, 'days');
       
     return(
-  < div className = "card" > 
-    <div className="card-content">
-      <p className="title">
-       {this.props.name}
-      </p>
-    </div> 
-    <div>
-      {this.checkLanguage()}
-    </div>
-    <div>
-      {lastUpdate}
-    </div>
-  </div>
+      < div className = "card" > 
+        <div className="card-content">
+          <p className="title">
+          <strong>{this.props.name}</strong>
+          </p>
+        </div> 
+        <div className="details">
+            {this.checkLanguage()}
+            <div className="details updated">
+            {lastUpdate}
+            </div>
+        </div>
+      </div>
     )
   }
 
   checkLanguage () {
-    if(this.props.language === 'JavaScript'){
-      return <p>JavaScript</p>
+    if(this.props.language === 'JavaScript') {
+      return (<div className="details"><div className="javascript"></div><p>JavaScript</p></div>)
+    }
+    else if(this.props.language === 'CSS') {
+      return (<div className="details"><div className="css"></div><p>CSS</p></div>)
+    }
+    else if(this.props.language === 'HTML') {
+       return (<div className="details"><div className="html"></div><p>HTML</p></div>)
     }
     else{
       return null;
