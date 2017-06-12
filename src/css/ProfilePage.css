@@ -6,7 +6,6 @@
 }
 
 .user{
-  border: 2px solid deeppink;
   width: 230px;
   margin-left:2%;
 }
@@ -50,7 +49,6 @@ p strong{
 .repos{
   width: 660px;
   margin-left: 20px;
-  border: 2px solid blue;
 }
 div.subnav{
   display: inline-flex;
@@ -91,6 +89,4 @@ div.subnav{
 .button:hover{
   background-color: #ECF0F4;
 }
-.repo-list{
-  border: 2px solid red;
-}
+
