@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Repo from './Repo';
+import '../css/RepoList.css';
 
 class RepoList extends Component {
   render() {
@@ -23,7 +24,7 @@ class RepoList extends Component {
 
   filteredOrNot (sortedRepos) {
     if(sortedRepos.length === 0){
-      return (<div className="no-repos">Richard-Thompson doesn't have any repositories that match.</div>);
+      return (<div className="no-repos"><strong>Richard-Thompson doesn't have any repositories that match.</strong></div>);
     }
     else{
       return (<div>
