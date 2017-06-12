@@ -3,19 +3,25 @@ import Repo from './Repo';
 
 class RepoList extends Component {
   render() {
+
     let filteredRepos = this.props.repos.filter((repo) => {
        return repo.name.indexOf(this.props.searchTerm) !== -1;
       
     });
-    console.log(filteredRepos)
+   
+
+    let sortedRepos = filteredRepos.sort((a,b) => {
+      return new Date(b.updated_at) - new Date(a.updated_at)
+    })
+    
     return (
       <div>
-        {filteredRepos.map((repo, i) => {
+        {sortedRepos.map((repo, i) => {
             return (<Repo
               description={repo.description}
               url={repo.url}
               name={repo.name}
-              time={repo.time}
+              time={repo.updated_at}
               user={repo.user}
               language={repo.language}
               stars={repo.stars}
@@ -35,7 +41,6 @@ class RepoList extends Component {
       return filteredRepos;
     }
   }
- 
+   
 }
-
 export default RepoList;
