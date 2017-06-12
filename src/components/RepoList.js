@@ -3,11 +3,14 @@ import Repo from './Repo';
 
 class RepoList extends Component {
   render() {
+    let filteredRepos = this.props.repos.filter((repo) => {
+       return repo.name.indexOf(this.props.searchTerm) !== -1;
+      
+    });
+    console.log(filteredRepos)
     return (
       <div>
-
-        {console.log(this.props.repos)}
-        {this.props.repos.map((repo, i) => {
+        {filteredRepos.map((repo, i) => {
             return (<Repo
               description={repo.description}
               url={repo.url}
@@ -23,6 +26,16 @@ class RepoList extends Component {
       </div>
     )
   }
+
+  filteredOrNot () {
+    if(this.props.searchTerm === ''){
+      return repos;
+    }
+    else{
+      return filteredRepos;
+    }
+  }
+ 
 }
 
 export default RepoList;

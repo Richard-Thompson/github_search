@@ -9,12 +9,17 @@ import '../css/ProfilePage.css';
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      input:''
+    }
+    this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount () {
     this.props.getAllRepos();
   }
   render() {
+    
     return (
       <div className="container">
         <div className="user">
@@ -53,19 +58,23 @@ class ProfilePage extends React.Component {
           </div>
 
           <div className="search">
-            <input className="repo-search-box" type="text" placeholder="Search repositories..."/>
+            <input className="repo-search-box" type="text" onChange={this.onChange} value={this.state.input} placeholder="Search repositories..."/>
             <a className="button">Type: <strong>All</strong></a>
             <a className="button">Language: <strong>All</strong></a>
             <a className="button green-button">New</a>
           </div>
 
           <div className="repo-list">
-            <RepoList repos={this.props.repos}/>
+            <RepoList searchTerm={this.state.input} repos={this.props.repos}/>
           </div>
-          {console.log(this.props.repos)}
         </div>
       </div>
     )
+  }
+  onChange (event) {
+    this.setState({
+      input:event.target.value
+    })
   }
 }
 
