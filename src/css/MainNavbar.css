@@ -1,0 +1,39 @@
+.fa-github{
+  margin-left:25px;
+  color: white;
+}
+.nav {
+  background-color: #24292E;
+ 
+}
+.search-box{
+  background-color: #3F4347;
+  color:white;
+  border-radius: 5px;
+  height: 30px;
+  width: 100%;
+  border: 0px;
+  padding: 10px;
+}
+a.nav-item{
+  margin-right:20px;
+  left:0px;
+}
+a.nav-item:hover{
+  color: white;
+}
+.fa-plus:hover{
+  color:white;
+}
+.fa-plus{
+  margin-top:20px;
+  margin-left: 50px;
+}
+img.avatar{
+  width: 25px;
+  height: 25px;
+  padding:0px;
+  margin-top:15px;
+  margin-left:25px;
+  border-radius: 5px;
+}
