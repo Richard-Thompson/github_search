@@ -1,5 +1,5 @@
 import * as types from '../actions/types';
-import {extractLastPage} from '../../helper/helperFunctions';
+import {extractLastPage} from '../helper/helperFunctions';
 
 const initialState = {
 repoData:[],

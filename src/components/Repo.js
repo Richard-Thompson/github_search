@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import moment from 'moment';
+import {checkLanguage} from '../helper/helperFunctions';
 import '../css/Repo.css';
 
 class Repo extends Component {
@@ -16,30 +17,18 @@ class Repo extends Component {
           <p className="title">
           <strong><Link to={`Richard-Thompson/${this.props.name}`}>{this.props.name}</Link></strong>
           </p>
-        </div> 
+        </div>
+        <div className="description">
+          {this.props.description}
+        </div>
         <div className="details">
-            {this.checkLanguage()}
+            {checkLanguage(this.props.language)}
             <div className="details updated">
             {lastUpdate}
             </div>
         </div>
       </div>
     )
-  }
-
-  checkLanguage () {
-    if(this.props.language === 'JavaScript') {
-      return (<div className="details"><div className="javascript"></div><p>JavaScript</p></div>)
-    }
-    else if(this.props.language === 'CSS') {
-      return (<div className="details"><div className="css"></div><p>CSS</p></div>)
-    }
-    else if(this.props.language === 'HTML') {
-       return (<div className="details"><div className="html"></div><p>HTML</p></div>)
-    }
-    else{
-      return null;
-    }
   }
 }
 

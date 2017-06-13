@@ -1,6 +1,10 @@
 .title{
   color: #0366D6;
 }
+.description{
+  width: 300px;
+  color:grey;
+}
 .details{
   display: flex;
   align-items: center;
@@ -34,6 +38,60 @@ div.html{
   margin-left:25px;
   margin-right:5px;
 }
+div.ruby{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #701516;
+  margin-left:25px;
+  margin-right:5px;
+}
+div.python{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #3572A5;
+  margin-left:25px;
+  margin-right:5px;
+} 
+div.java{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #B07219;
+  margin-left:25px;
+  margin-right:5px;
+} 
+div.c{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #555555;
+  margin-left:25px;
+  margin-right:5px;
+} 
+div.php{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #4F5D95;
+  margin-left:25px;
+  margin-right:5px;
+} 
+div.c-plus{
+  width:15px;
+  height:15px;
+  border-radius: 50%;
+  text-align: center;
+  background-color: #F34B7D;
+  margin-left:25px;
+  margin-right:5px;
+} 
 .updated{
   margin-left:20px;
 }
