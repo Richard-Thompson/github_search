@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router';
 import moment from 'moment';
 import '../css/Repo.css';
 
@@ -13,7 +14,7 @@ class Repo extends Component {
       < div className = "card" > 
         <div className="card-content">
           <p className="title">
-          <strong>{this.props.name}</strong>
+          <strong><Link to={`Richard-Thompson/${this.props.name}`}>{this.props.name}</Link></strong>
           </p>
         </div> 
         <div className="details">
