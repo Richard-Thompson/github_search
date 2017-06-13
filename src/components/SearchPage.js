@@ -23,29 +23,33 @@ class SearchPage extends Component {
   render () {
     return (
       <div>
-        <div className="search-subnav">
-            <div className="search-tab is-active">
-              Repositories
-            </div>
-            <div className="search-tab">
-              Code
-            </div>
-            <div className="search-tab">
-              Commits
-            </div>
-            <div className="search-tab">
-              Issues
-            </div>
-             <div className="search-tab">
-              Wikis
-            </div>
-            <div className="search-tab">
-              Users
-            </div>
-            <div className="adv-search">
-              Advance search
-            </div>
-        </div>
+          <div className="search-subnav">
+              <div className="search-tab is-active">
+                Repositories
+              </div>
+              <div className="search-tab">
+                Code
+              </div>
+              <div className="search-tab">
+                Commits
+              </div>
+              <div className="search-tab">
+                Issues
+              </div>
+              <div className="search-tab">
+                Wikis
+              </div>
+              <div className="search-tab">
+                Users
+              </div>
+              <div className="adv-search">
+                Advance search
+              </div>
+          </div>
+          <div className="number-results">
+            <strong>{' ' + this.props.totalResults} repository results</strong>
+            <a className="button sort"> Sort</a>
+          </div>
           <div className="search-list">
             <SearchList repos={this.props.search}/>
           </div>
@@ -72,7 +76,8 @@ function mapStateToProps (state) {
   return {
     search: state.searchResults,
     pages: state.pages,
-    activePage: state.activePage    
+    activePage: state.activePage,
+    totalResults: state.totalResults   
   }
 }
 

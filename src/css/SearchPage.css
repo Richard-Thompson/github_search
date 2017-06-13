@@ -22,3 +22,15 @@ div.search-subnav{
 .adv-search:hover{
   color:#496ADB;
 }
+.number-results{
+  margin-left:40px;
+  margin-bottom: 15px;
+  margin-top:20px;
+  width:890px;
+  font-size: 15pt;
+}
+a.sort{
+  background-color: #E6EBF1;
+  float: right;
+  height:35px;
+}

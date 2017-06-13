@@ -1,11 +1,18 @@
 a{
   color:#0366D6;
 }
+.card{
+  box-shadow: none;
+}
 .search-card{
   display: flex;
   align-items: center;
   margin-left:40px;
   width:890px;
+  border-left: 0px;
+  border-right:0px;
+  border-top:1px solid lightgrey;
+  border-bottom:1px solid lightgrey;
 }
 .overview{
   width:450px;
