@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import RepoList from './RepoList';
 
@@ -6,7 +6,7 @@ import {getAllRepos} from '../actions/actions'
 
 import '../css/ProfilePage.css';
 
-class ProfilePage extends React.Component {
+class ProfilePage extends Component {
   constructor(props) {
     super(props);
     this.state = {

@@ -36,13 +36,13 @@ export function fetchAllReposError (error) {
   }
 }
 
-export function searchForRepo (searchTerm) {
+export function searchForRepo (searchTerm, pageNumber) {
   return function (dispatch) {
     dispatch(searchForRepoRequest());
     axios
-        .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=10`)
+        .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=10&page=${pageNumber}`)
         .then((response) => {
-          dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, response.headers.link));
+          dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, pageNumber, response.headers.link));
         })
         .catch((error) => {
           dispatch(searchForRepoError(error));
@@ -57,12 +57,13 @@ export function searchForRepoRequest () {
   }
 }
 
-export function searchForRepoSuccess (searchResults, totalCount, pageOptions) {
+export function searchForRepoSuccess (searchResults, totalCount, pageNumber, lastPage) {
   return {
     type: types.GET_SEARCH_RESULTS_SUCCESS,
     searchResults: searchResults,
     totalCount: totalCount,
-    pageOptions: pageOptions
+    pageNumber: pageNumber,
+    lastPage: lastPage
   }
 }
 
@@ -72,3 +73,63 @@ export function searchForRepoError (error) {
     error:error
   }
 }
+
+export function checkDecreasePage (){
+  return {
+    type: types.CHECK_DECREASE_PAGES
+  }
+}
+
+export function checkIncreasePage () {
+  return {
+    type: types.CHECK_INCREASE_PAGES
+  }
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// export function getNextOrPrevPage (searchTerm, pageNumber) {
+//   return function (dispatch) {
+//     dispatch(getNextOrPrevPageRequest());
+//     axios
+//         .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=1&page=${pageNumber}`)
+//         .then((response) => {
+//           dispatch(getNextOrPrevPageSuccess(response.data.items));
+//         })
+//         .catch((error) => {
+//           dispatch(getNextOrPrevPageError(error));
+//         })
+//   }
+// }
+
+// export function getNextOrPrevPageRequest () {
+//   return {
+//     type: types.GET_PREV_OR_NEXT_PAGE_REQUEST,
+//   }
+// }
+
+// export function getNextOrPrevPageSuccess (searchResults) {
+//   return {
+//     type: types.GET_PREV_OR_NEXT_PAGE_REQUEST,
+//     searchResults: searchResults
+//   }
+// }
+
+// export function getNextOrPrevPageError (error) {
+//   return {
+//     type: types.GET_PREV_OR_NEXT_PAGE_ERROR,
+//     error: error
+//   }
+// }

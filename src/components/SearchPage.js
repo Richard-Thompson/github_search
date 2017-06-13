@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {searchForRepo} from '../actions/actions';
 import SearchList from './SearchList';
+import Pagination from './Pagination';
 
 
 class SearchPage extends Component {
@@ -9,17 +10,18 @@ class SearchPage extends Component {
     super (props);
   }
   componentDidMount () {
-    this.props.searchRepos(this.props.params.searchTerm)
+    this.props.searchRepos(this.props.params.searchTerm, 1)
   }
-  componentWillReceiveProps (nextProps) {
-    if (this.props.params.searchTerm !== nextProps.params.searchTerm) {
-      this.props.searchRepos(nextProps.params.searchTerm)
-    }
-  }
+  
   render () {
     return (
       <div>
          <SearchList repos={this.props.search}/>
+         <Pagination 
+            pages={this.props.pages}
+            activePage={this.props.activePage}
+            searchTerm={this.props.params.searchTerm}
+          />
       </div> 
     )
   }
@@ -28,16 +30,16 @@ class SearchPage extends Component {
 
 function mapDispatchToProps (dispatch) {
   return {
-    searchRepos: (searchTerm) => {
-      dispatch(searchForRepo(searchTerm));
+    searchRepos: (searchTerm, pageNumber) => {
+      dispatch(searchForRepo(searchTerm, pageNumber));
     }
   }
 }
 function mapStateToProps (state) {
   return {
     search: state.searchResults,
-    page: state.page,
-    pages: state.pages
+    pages: state.pages,
+    activePage: state.activePage    
   }
 }
 
