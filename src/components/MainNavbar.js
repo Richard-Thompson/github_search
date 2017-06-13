@@ -1,22 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {SearchForRepo} from '../actions/actions';
+import {browserHistory} from 'react-router';
 
 import '../css/MainNavbar.css'
 
-class MainNavbar extends React.Component {
+class MainNavbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      repos: [
-        'NorthCoders-News', 'NorthCoders-News-API'
-      ],
-      typed: ''
+      input: ''
     }
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
   }
-
-  onChange(event) {
-    this.setState({typed: event.target.value})
-  }
-
   render() {
     return (
        <nav className="nav">
@@ -25,11 +21,15 @@ class MainNavbar extends React.Component {
             <i className="fa fa-github fa-3x"></i>
           </a>
           <a className="nav-item">
+            <form onSubmit={this.onSubmit}>
             <input
               type="text"
               placeholder="Search Github"
               onChange={this.onChange}
+              onSubmit={this.onSubmit}
+              value={this.state.input}
               className="search-box"/>
+              </form>
           </a>
           <a className="nav-item">
             Pull Requests
@@ -57,6 +57,17 @@ class MainNavbar extends React.Component {
 
       </nav>
     )
+  }
+
+  onChange(event) {
+    this.setState({input: event.target.value})
+  }
+
+  onSubmit (event) {
+    event.preventDefault();
+    console.log('hello')
+    browserHistory.push(`/search/repositories/${this.state.input}`)
+
   }
 
 }
