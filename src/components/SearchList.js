@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Repo from './Repo';
+import SearchRepo from './SearchRepo';
 
 class SearchList extends Component {
   
@@ -8,7 +8,7 @@ class SearchList extends Component {
       <div>
         {this.props.repos.map((repo, i) => {
          return (
-         <Repo
+         <SearchRepo
               description={repo.description}
               url={repo.url}
               name={repo.name}

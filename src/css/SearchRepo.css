@@ -1,0 +1,25 @@
+a{
+  color:#0366D6;
+}
+.search-card{
+  display: flex;
+  align-items: center;
+  margin-left:40px;
+  width:890px;
+}
+.overview{
+  width:450px;
+}
+.title{
+  color: #0366D6;
+}
+.search-description{
+  font-size:9.5pt;
+  color:grey;
+  width: 350px;
+}
+.last-updated{
+  color: grey;
+  font-size: 9.5pt;
+  margin-top:15px;
+}
