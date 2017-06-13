@@ -39,10 +39,10 @@ class SearchPage extends Component {
             <div className="adv-search">
               Advance search
             </div>
+        </div>
+          <div className="search-list">
+            <SearchList repos={this.props.search}/>
           </div>
-
-         <SearchList repos={this.props.search}/>
-
          <Pagination 
             pages={this.props.pages}
             activePage={this.props.activePage}
