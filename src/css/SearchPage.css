@@ -1,0 +1,24 @@
+div.search-subnav{
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left:40px;
+}
+.search-tab{
+  padding:20px;
+  color:grey;
+}
+.search-tab:hover{
+  color:black;
+}
+.is-active{
+   border-bottom:3px solid #E36209;
+}
+.adv-search{
+  margin-left: 240px;
+  color: grey;
+  font-size:10pt;
+}
+.adv-search:hover{
+  color:#496ADB;
+}
