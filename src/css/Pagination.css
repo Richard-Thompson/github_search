@@ -1,0 +1,26 @@
+.pagination-container{ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:20px;
+  padding-bottom: 20px;
+  margin-left: auto;
+  margin-right:auto;
+  width:400px;
+}
+.prev{
+  padding:10px;
+  border: 2px solid lightgray
+}
+.page{
+  padding:10px;
+  border: 2px solid lightgray
+}
+.next{
+  padding:10px;
+  border: 2px solid lightgray
+}
+.active-page{
+  padding:10px;
+  border: 2px solid grey;
+}
