@@ -10,8 +10,11 @@ export function extractPageOptions (data) {
         obj['prev'] = pageOptions[i].substring(1,pageOptions[i].length-13);
         
       }
+    else if(pageOptions[i].indexOf('last') !== -1){
+       obj['last'] = pageOptions[i].substring(92,pageOptions[i].length-13);
+    }
   }
-
+  console.log(pageOptions)
   console.log(obj);
 
   return obj;

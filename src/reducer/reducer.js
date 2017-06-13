@@ -5,10 +5,11 @@ const initialState = {
 repoData:[],
 searchResults:[],
 totalResults: 0,
-activePage: null,
+activePage:1,
 pages: [1,2,3,4,5,6,7,8,9,10],
 nextPage: null,
 prePage: null,
+lastPage:null,
 loading:false,
 error:null
 }
@@ -38,7 +39,9 @@ export default (prevState = initialState, action) => {
     const pageOptions = extractPageOptions(action.pageOptions);
     newState.loading = false;
     newState.searchResults = action.searchResults;
-    newState.totalResults = action.totalCount
+    newState.totalResults = action.totalCount;
+    newState.lastPage = pageOptions.lastPage;
+    newState.nextPage = pageOptions.next;
     
   }
 
