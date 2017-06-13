@@ -1,11 +1,12 @@
 import * as types from '../actions/types';
+import {extractPageOptions} from '../../helper/helperFunctions';
 
 const initialState = {
 repoData:[],
 searchResults:[],
 totalResults: 0,
 activePage: null,
-pages: [1,2,3,4,5,6,7,8,9,10]
+pages: [1,2,3,4,5,6,7,8,9,10],
 nextPage: null,
 prePage: null,
 loading:false,
@@ -34,9 +35,11 @@ export default (prevState = initialState, action) => {
   }
 
   if(action.type === types.GET_SEARCH_RESULTS_SUCCESS) {
+    const pageOptions = extractPageOptions(action.pageOptions);
     newState.loading = false;
     newState.searchResults = action.searchResults;
     newState.totalResults = action.totalCount
+    
   }
 
   if(action.type === types.GET_SEARCH_RESULTS_ERROR) {

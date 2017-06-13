@@ -40,10 +40,9 @@ export function searchForRepo (searchTerm) {
   return function (dispatch) {
     dispatch(searchForRepoRequest());
     axios
-        .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc`)
+        .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=10`)
         .then((response) => {
-          console.log(response)
-          dispatch(searchForRepoSuccess(response.data.items, response.data.total_count));
+          dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, response.headers.link));
         })
         .catch((error) => {
           dispatch(searchForRepoError(error));
@@ -58,11 +57,12 @@ export function searchForRepoRequest () {
   }
 }
 
-export function searchForRepoSuccess (searchResults, totalCount) {
+export function searchForRepoSuccess (searchResults, totalCount, pageOptions) {
   return {
     type: types.GET_SEARCH_RESULTS_SUCCESS,
     searchResults: searchResults,
-    totalCount: totalCount
+    totalCount: totalCount,
+    pageOptions: pageOptions
   }
 }
 
