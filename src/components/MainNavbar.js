@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {SearchForRepo} from '../actions/actions';
-import {browserHistory} from 'react-router';
-
+import {browserHistory, Link} from 'react-router';
 import '../css/MainNavbar.css'
 
 class MainNavbar extends Component {
@@ -18,7 +17,7 @@ class MainNavbar extends Component {
        <nav className="nav">
         <div className="nav-left">
           <a className="nav-item">
-            <i className="fa fa-github fa-3x"></i>
+            <Link to="/"><i className="fa fa-github fa-3x"></i></Link>
           </a>
           <a className="nav-item">
             <form onSubmit={this.onSubmit}>
@@ -45,9 +44,9 @@ class MainNavbar extends Component {
           </a>
            <i className="fa fa-plus"/>
 
-          <img
+          <Link to="/"><img
             className="nav-item avatar"
-            src="https://avatars3.githubusercontent.com/u/23527306?v=3"/>
+            src="https://avatars3.githubusercontent.com/u/23527306?v=3"/> </Link>
 
         </div>
 
