@@ -67,6 +67,9 @@ class MainNavbar extends Component {
     event.preventDefault();
     console.log('hello')
     browserHistory.push(`/search/repositories/${this.state.input}`)
+    this.setState({
+      input:''
+    })
 
   }
 

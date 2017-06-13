@@ -13,6 +13,12 @@ class SearchPage extends Component {
   componentDidMount () {
     this.props.searchRepos(this.props.params.searchTerm, 1)
   }
+
+  componentWillReceiveProps (nextProps) {
+   if (this.props.params.searchTerm !== nextProps.params.searchTerm) {
+     this.props.searchRepos(nextProps.params.searchTerm, 1);
+   }
+ }
   
   render () {
     return (
