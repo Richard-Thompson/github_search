@@ -1,3 +1,7 @@
+.pagination{
+  width: 890px;
+  margin-left:40px;
+}
 .pagination-container{ 
   display: flex;
   align-items: center;

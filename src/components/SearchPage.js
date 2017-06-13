@@ -53,11 +53,13 @@ class SearchPage extends Component {
           <div className="search-list">
             <SearchList repos={this.props.search}/>
           </div>
-         <Pagination 
-            pages={this.props.pages}
-            activePage={this.props.activePage}
-            searchTerm={this.props.params.searchTerm}
-          />
+          <div className="pagination">
+            <Pagination 
+                pages={this.props.pages}
+                activePage={this.props.activePage}
+                searchTerm={this.props.params.searchTerm}
+              />
+          </div>
 
       </div> 
     )
