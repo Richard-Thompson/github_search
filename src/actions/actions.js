@@ -42,7 +42,6 @@ export function searchForRepo (searchTerm, pageNumber) {
     axios
         .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=10&page=${pageNumber}`)
         .then((response) => {
-          console.log(response.data.items);
           dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, pageNumber, response.headers.link));
         })
         .catch((error) => {

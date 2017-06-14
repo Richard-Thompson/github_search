@@ -2,6 +2,7 @@ import React from 'react';
 
 export function extractLastPage (data) {
   if (!data) return undefined;
+  if (data.indexOf('last') === -1) return undefined;
   const pageOptions = data.split(',');
   let obj = {};
   
@@ -15,7 +16,7 @@ export function extractLastPage (data) {
 
 export function checkLanguage (language) {
     if (language === 'JavaScript') {
-      return (<div className="details"><div className="javascript"></div><p>JavaScript</p></div>);
+      return <div className="details"><div className="javascript"></div><p>JavaScript</p></div>;
     }
     else if (language === 'CSS') {
       return (<div className="details"><div className="css"></div><p>CSS</p></div>);
