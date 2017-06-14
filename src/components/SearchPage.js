@@ -46,20 +46,26 @@ class SearchPage extends Component {
                 Advance search
               </div>
           </div>
-          <div className="number-results">
-            <strong>{' ' + this.props.totalResults} repository results</strong>
-            <a className="button sort"> Sort</a>
+          {this.props.loading ? null :
+          <div>
+            <div className="number-results">
+              <strong>{' ' + this.props.totalResults} repository results</strong>
+              <a className="button sort"> Sort</a>
+            </div>
+            <div className="search-list">
+              <SearchList repos={this.props.search}/>
+            </div>
+            <div className="pagination">
+              {this.props.totalResults === 0 ? null :
+              <Pagination 
+                  pages={this.props.pages}
+                  activePage={this.props.activePage}
+                  searchTerm={this.props.params.searchTerm}
+                />
+              }
+            </div>
           </div>
-          <div className="search-list">
-            <SearchList repos={this.props.search}/>
-          </div>
-          <div className="pagination">
-            <Pagination 
-                pages={this.props.pages}
-                activePage={this.props.activePage}
-                searchTerm={this.props.params.searchTerm}
-              />
-          </div>
+          }
 
       </div> 
     )
@@ -79,7 +85,8 @@ function mapStateToProps (state) {
     search: state.searchResults,
     pages: state.pages,
     activePage: state.activePage,
-    totalResults: state.totalResults   
+    totalResults: state.totalResults,
+    loading: state.loading 
   }
 }
 
