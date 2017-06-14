@@ -35,10 +35,16 @@ export default (prevState = initialState, action) => {
 
   if(action.type === types.GET_SEARCH_RESULTS_SUCCESS) {
     const extractedLastPage = extractLastPage(action.lastPage);
+    console.log(extractedLastPage)
+    if(!extractedLastPage) {
+      newState.lastPage = 1;
+    }
+    else{
+      newState.lastPage = extractedLastPage.last
+    }
     newState.loading = false;
     newState.searchResults = action.searchResults;
     newState.totalResults = action.totalCount;
-    newState.lastPage = extractedLastPage.last
     if (action.pageNumber < 1) {
       newState.activePage = 1
     }

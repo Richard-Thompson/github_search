@@ -1,6 +1,7 @@
 import React from 'react';
 
 export function extractLastPage (data) {
+  if(!data) return undefined;
   const pageOptions = data.split(',')
   let obj = {}
   
@@ -9,7 +10,6 @@ export function extractLastPage (data) {
        obj['last'] = pageOptions[i].substring(92,pageOptions[i].length-13);
     }
   }
-  console.log(obj)
   return obj;
 }
 
