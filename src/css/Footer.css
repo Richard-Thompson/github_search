@@ -1,0 +1,25 @@
+.footer-container{
+  width:890px;
+  margin-left:40px;
+  display: inline-flex;
+  justify-content: center;
+}
+.copyright, .item, .icon-container{
+  padding-left:15px;
+  font-size:9pt;
+}
+.fa{
+  display: flex;
+}
+.icon{
+  color:lightgrey;
+  margin-left:0;
+  margin-right: auto;
+  margin-left:auto;
+}
+.item{
+  color:#1291F3
+}
+.item:hover{
+  text-decoration: underline;
+}
