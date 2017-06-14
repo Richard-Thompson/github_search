@@ -12,7 +12,6 @@ import 'octicons/build/octicons.css';
 
 import App from './components/App'
 import ProfilePage from './components/ProfilePage';
-import RepoPage from './components/RepoPage'
 import SearchPage from './components/SearchPage';
 import reducer from './reducer/reducer'
 
@@ -24,7 +23,6 @@ ReactDOM.render(<Provider store={store}>
                   <Router history={browserHistory}>
                     <Route path='/' component={App}>
                       <IndexRoute component={ProfilePage}/>
-                      <Route path='/:user/:repo' component={RepoPage}/>
                       <Route path='/search/repositories/:searchTerm' component={SearchPage}/>
                     </Route>
                   </Router>

@@ -42,6 +42,7 @@ export function searchForRepo (searchTerm, pageNumber) {
     axios
         .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=10&page=${pageNumber}`)
         .then((response) => {
+          console.log(response.data.items)
           dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, pageNumber, response.headers.link));
         })
         .catch((error) => {
@@ -86,50 +87,3 @@ export function checkIncreasePage () {
   }
 }
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// export function getNextOrPrevPage (searchTerm, pageNumber) {
-//   return function (dispatch) {
-//     dispatch(getNextOrPrevPageRequest());
-//     axios
-//         .get(`${ROOT}/search/repositories?q=${searchTerm}&sort=stars&order=desc&per_page=1&page=${pageNumber}`)
-//         .then((response) => {
-//           dispatch(getNextOrPrevPageSuccess(response.data.items));
-//         })
-//         .catch((error) => {
-//           dispatch(getNextOrPrevPageError(error));
-//         })
-//   }
-// }
-
-// export function getNextOrPrevPageRequest () {
-//   return {
-//     type: types.GET_PREV_OR_NEXT_PAGE_REQUEST,
-//   }
-// }
-
-// export function getNextOrPrevPageSuccess (searchResults) {
-//   return {
-//     type: types.GET_PREV_OR_NEXT_PAGE_REQUEST,
-//     searchResults: searchResults
-//   }
-// }
-
-// export function getNextOrPrevPageError (error) {
-//   return {
-//     type: types.GET_PREV_OR_NEXT_PAGE_ERROR,
-//     error: error
-//   }
-// }

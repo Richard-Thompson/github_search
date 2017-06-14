@@ -14,6 +14,9 @@ a{
   border-top:1px solid lightgrey;
   border-bottom:1px solid lightgrey;
 }
+.card-content{
+  padding-left:0;
+}
 .overview{
   width:450px;
 }
@@ -30,3 +33,47 @@ a{
   font-size: 9.5pt;
   margin-top:15px;
 }
+
+
+
+.more-details{
+  width:890px;
+  margin-left:40px;
+  border: 2px solid lightgrey;
+}
+.user-profile{
+  width: 890px;
+  height:75px;
+  border-bottom:1px solid lightgrey;
+  display: flex;
+  align-items: center;
+}
+.users-avatar{
+  width:75px;
+  height:75px;
+  border-radius: 5%;
+}
+.name{
+  margin-left:50px;
+  color: grey;
+}
+a.full-name{
+  margin-right: 200px;
+}
+a:hover{
+  color: #0366D6;
+  text-decoration: underline;
+}
+.repo-details{
+  display: flex;
+  margin-left:105px;
+}
+.section{
+  display: flex;
+  justify-content: center;
+  padding:15px;
+  padding-right: 130px;
+  
+}
+
+

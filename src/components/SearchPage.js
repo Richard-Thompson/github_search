@@ -55,6 +55,7 @@ class SearchPage extends Component {
             <div className="search-list">
               <SearchList repos={this.props.search}/>
             </div>
+          
             <div className="pagination">
               {this.props.totalResults === 0 ? null :
               <Pagination 
@@ -66,9 +67,14 @@ class SearchPage extends Component {
             </div>
           </div>
           }
+          
 
       </div> 
     )
+  }
+
+  clickHandle() {
+
   }
 }
 

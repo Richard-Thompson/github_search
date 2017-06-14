@@ -3,6 +3,7 @@ div.search-subnav{
   justify-content: center;
   align-items: center;
   margin-left:40px;
+  border-bottom: 1px solid lightgrey;
 }
 .search-tab{
   padding:20px;

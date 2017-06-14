@@ -10,15 +10,17 @@ class SearchList extends Component {
          return (
          <SearchRepo
               description={repo.description}
-              url={repo.url}
+              url={repo.svn_url}
               name={repo.name}
               time={repo.updated_at}
-              user={repo.user}
+              user={repo.owner.login}
               language={repo.language}
-              stars={repo.stars}
+              stars={repo.stargazers_count}
               open_issues={repo.open_issues}
               forks={repo.forks}
-              avatar={repo.avatar}/>
+              avatar={repo.owner.avatar_url}
+              branch={repo.default_branch}
+              fullName={repo.full_name}/>
             
               )
       })}
