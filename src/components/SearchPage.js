@@ -11,7 +11,7 @@ class SearchPage extends Component {
     super (props);
   }
   componentDidMount () {
-    this.props.searchRepos(this.props.params.searchTerm, 1)
+    this.props.searchRepos(this.props.params.searchTerm, 1);
   }
 
   componentWillReceiveProps (nextProps) {
@@ -70,11 +70,7 @@ class SearchPage extends Component {
           
 
       </div> 
-    )
-  }
-
-  clickHandle() {
-
+    );
   }
 }
 
@@ -84,7 +80,7 @@ function mapDispatchToProps (dispatch) {
     searchRepos: (searchTerm, pageNumber) => {
       dispatch(searchForRepo(searchTerm, pageNumber));
     }
-  }
+  };
 }
 function mapStateToProps (state) {
   return {
@@ -93,7 +89,7 @@ function mapStateToProps (state) {
     activePage: state.activePage,
     totalResults: state.totalResults,
     loading: state.loading 
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SearchPage);

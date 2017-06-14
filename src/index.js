@@ -10,14 +10,14 @@ import 'bulma/css/bulma.css';
 import 'font-awesome/css/font-awesome.css';
 import 'octicons/build/octicons.css';
 
-import App from './components/App'
+import App from './components/App';
 import ProfilePage from './components/ProfilePage';
 import SearchPage from './components/SearchPage';
-import reducer from './reducer/reducer'
+import reducer from './reducer/reducer';
 
 const logger = createLogger();
 
-const store = createStore(reducer, applyMiddleware(thunk, logger))
+const store = createStore(reducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(<Provider store={store}>
                   <Router history={browserHistory}>

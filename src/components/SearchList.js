@@ -3,12 +3,13 @@ import SearchRepo from './SearchRepo';
 
 class SearchList extends Component {
   
-  render() {
+  render () {
     return (
       <div>
         {this.props.repos.map((repo, i) => {
          return (
          <SearchRepo
+              key={i}
               description={repo.description}
               url={repo.svn_url}
               name={repo.name}
@@ -22,10 +23,10 @@ class SearchList extends Component {
               branch={repo.default_branch}
               fullName={repo.full_name}/>
             
-              )
+              );
       })}
       </div>
-    )
+    );
   }
 
 }

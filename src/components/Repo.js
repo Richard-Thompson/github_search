@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
 import moment from 'moment';
 import {checkLanguage} from '../helper/helperFunctions';
 import '../css/Repo.css';
 
 class Repo extends Component {
 
-  render() { 
+  render () { 
       const newDate = moment(new Date());
       const oldDate = moment(this.props.time);
       const lastUpdate = newDate.diff(oldDate, 'days');
       
-    return(
+    return (
       < div className = "card" > 
         <div className="card-content">
           <p className="title">
@@ -28,7 +27,7 @@ class Repo extends Component {
             </div>
         </div>
       </div>
-    )
+    );
   }
 }
 

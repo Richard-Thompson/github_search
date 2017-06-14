@@ -2,23 +2,23 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import RepoList from './RepoList';
 
-import {getAllRepos} from '../actions/actions'
+import {getAllRepos} from '../actions/actions';
 
 import '../css/ProfilePage.css';
 
 class ProfilePage extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       input:''
-    }
+    };
     this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount () {
     this.props.getAllRepos();
   }
-  render() {
+  render () {
     
     return (
       <div className="container">
@@ -69,19 +69,19 @@ class ProfilePage extends Component {
           </div>
         </div>
       </div>
-    )
+    );
   }
   onChange (event) {
     this.setState({
       input:event.target.value
-    })
+    });
   }
 }
 
 function mapStateToProps (state) {
   return {
     repos: state.repoData
-  }
+  };
 }
 
 function mapDispatchToProps (dispatch) {
@@ -89,7 +89,7 @@ function mapDispatchToProps (dispatch) {
     getAllRepos: () => {
       dispatch(getAllRepos());
     }
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProfilePage);

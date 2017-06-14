@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
-import {SearchForRepo} from '../actions/actions';
 import {browserHistory, Link} from 'react-router';
-import '../css/MainNavbar.css'
+import '../css/MainNavbar.css';
 
 class MainNavbar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       input: ''
-    }
+    };
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  render() {
+  render () {
     return (
        <nav className="nav">
         <div className="nav-left">
@@ -55,20 +54,20 @@ class MainNavbar extends Component {
         </div>
 
       </nav>
-    )
+    );
   }
 
-  onChange(event) {
-    this.setState({input: event.target.value})
+  onChange (event) {
+    this.setState({input: event.target.value});
   }
 
   onSubmit (event) {
     event.preventDefault();
-    console.log('hello')
-    browserHistory.push(`/search/repositories/${this.state.input}`)
+    console.log('hello');
+    browserHistory.push(`/search/repositories/${this.state.input}`);
     this.setState({
       input:''
-    })
+    });
 
   }
 

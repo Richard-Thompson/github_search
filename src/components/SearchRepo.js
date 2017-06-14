@@ -1,24 +1,23 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
 import moment from 'moment';
 import {checkLanguage} from '../helper/helperFunctions';
 import '../css/SearchRepo.css';
 
 class SearchRepo extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       showDetails: false
-    }
+    };
     this.clickHandler = this.clickHandler.bind(this);
   }
  
-  render() {
+  render () {
      const newDate = moment(new Date());
       const oldDate = moment(this.props.time);
       const lastUpdate = newDate.diff(oldDate, 'days');
       
-    return(
+    return (
     <div>
       <div className="card search-card" > 
         <div className="card-content overview">
@@ -55,13 +54,13 @@ class SearchRepo extends Component {
         </div>
       </div> : null}
     </div>
-    )
+    );
   }
 
-  clickHandler() {
+  clickHandler () {
     this.setState({
       showDetails: !this.state.showDetails
-    })
+    });
   }
 }
 

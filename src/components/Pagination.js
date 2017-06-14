@@ -4,7 +4,7 @@ import {searchForRepo, checkIncreasePage, checkDecreasePage} from '../actions/ac
 import '../css/Pagination.css';
 
 class Pagination extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
 
     this.prevPage = this.prevPage.bind(this);
@@ -16,30 +16,30 @@ class Pagination extends Component {
       <div className="pagination-container">
         <div className ="prev" onClick={this.prevPage}>Prev</div>
         {this.props.pages.map((pageNumber, i) => {
-          if(pageNumber === this.props.activePage) {
+          if (pageNumber === this.props.activePage) {
             return (
               <div key={i} className="active-page">{pageNumber}</div>
-            )
+            );
           }
-          else{
+          else {
             return (
               <div key={i} className="page">{pageNumber}</div>
-            )
+            );
           }
         })}
         <div className="next" onClick={this.nextPage}>Next</div>
       </div>
-    )
+    );
   }
 
   prevPage () {
-      this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber-1);
+      this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber - 1);
       this.props.checkDecreasePage();
     }
   
 
   nextPage () {
-     this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber+1);
+     this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber + 1);
      this.props.checkIncreasePage();
   }
 }
@@ -50,18 +50,18 @@ function mapDispatchToProps (dispatch) {
       dispatch(searchForRepo(searchTerm, pageNumber));
     },
     checkIncreasePage: () => {
-      dispatch(checkIncreasePage())
+      dispatch(checkIncreasePage());
     },
     checkDecreasePage: () => {
-      dispatch(checkDecreasePage())
+      dispatch(checkDecreasePage());
     }
-  }
+  };
 }
 
 function mapStateToProps (state) {
   return {
     pageNumber: state.activePage
-  }
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pagination);
