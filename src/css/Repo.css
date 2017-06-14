@@ -8,7 +8,9 @@
 .details{
   display: flex;
   align-items: center;
- padding-bottom:15px;
+  padding-bottom:15px;
+  padding-top: 15px;
+  margin-left:0;
 }
 
 div.javascript{
@@ -17,7 +19,6 @@ div.javascript{
   border-radius: 50%;
   text-align: center;
   background-color: #F1E05A;
-  margin-left:25px;
   margin-right:5px;
 }
 div.css{
@@ -26,7 +27,6 @@ div.css{
   border-radius: 50%;
   text-align: center;
   background-color: #563d7c;
-  margin-left:25px;
   margin-right:5px;
 }
 div.html{
@@ -35,7 +35,6 @@ div.html{
   border-radius: 50%;
   text-align: center;
   background-color: #E34C26;
-  margin-left:25px;
   margin-right:5px;
 }
 div.ruby{
@@ -44,7 +43,6 @@ div.ruby{
   border-radius: 50%;
   text-align: center;
   background-color: #701516;
-  margin-left:25px;
   margin-right:5px;
 }
 div.python{
@@ -53,7 +51,6 @@ div.python{
   border-radius: 50%;
   text-align: center;
   background-color: #3572A5;
-  margin-left:25px;
   margin-right:5px;
 } 
 div.java{
@@ -62,7 +59,6 @@ div.java{
   border-radius: 50%;
   text-align: center;
   background-color: #B07219;
-  margin-left:25px;
   margin-right:5px;
 } 
 div.c{
@@ -71,7 +67,6 @@ div.c{
   border-radius: 50%;
   text-align: center;
   background-color: #555555;
-  margin-left:25px;
   margin-right:5px;
 } 
 div.php{
@@ -80,7 +75,6 @@ div.php{
   border-radius: 50%;
   text-align: center;
   background-color: #4F5D95;
-  margin-left:25px;
   margin-right:5px;
 } 
 div.c-plus{
@@ -89,7 +83,6 @@ div.c-plus{
   border-radius: 50%;
   text-align: center;
   background-color: #F34B7D;
-  margin-left:25px;
   margin-right:5px;
 } 
 .updated{

@@ -15,7 +15,7 @@ class Repo extends Component {
       < div className = "card" > 
         <div className="card-content">
           <p className="title">
-          <strong><Link to={`Richard-Thompson/${this.props.name}`}>{this.props.name}</Link></strong>
+          <strong><a>{this.props.name}</a></strong>
           </p>
         </div>
         <div className="description">
@@ -24,7 +24,7 @@ class Repo extends Component {
         <div className="details">
             {checkLanguage(this.props.language)}
             <div className="details updated">
-            {lastUpdate}
+            Lastupdated {lastUpdate} days ago
             </div>
         </div>
       </div>
