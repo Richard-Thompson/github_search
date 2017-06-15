@@ -1,4 +1,4 @@
-# NorthCodersNews
+# Github Search Project
 
 A React project based on using the github api to search for repositories. The landing page is my profile page set to repositories. You can search through the repositories on this landing page by searching in the submenu search box.
 
