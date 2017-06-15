@@ -8,7 +8,6 @@ import {createLogger} from 'redux-logger';
 
 import 'bulma/css/bulma.css';
 import 'font-awesome/css/font-awesome.css';
-import 'octicons/build/octicons.css';
 
 import App from './components/App';
 import ProfilePage from './components/ProfilePage';
