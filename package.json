@@ -9,8 +9,7 @@
     "lint": "eslint ./",
     "posttest": "npm run lint",
     "start": "node ./server/index.js",
-    "build": "webpack --config webpack.config.js --progress --colors",
-    "postinstall": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js --progress --colors"
   },
   "keywords": [],
   "author": "",
