@@ -15,9 +15,9 @@ class MainNavbar extends Component {
     return (
        <nav className="nav">
         <div className="nav-center">
-          <a className="nav-item">
-            <Link to="/"><i className="fa fa-github fa-3x"></i></Link>
-          </a>
+          
+            <Link to="/"><i className="nav-item fa fa-github fa-3x"></i></Link>
+          
           <a className="nav-item">
             <form onSubmit={this.onSubmit}>
             <input
@@ -48,12 +48,7 @@ class MainNavbar extends Component {
             src="https://avatars3.githubusercontent.com/u/23527306?v=3"/> </Link>
 
         </div>
-        <span class="nav-toggle">
-    <span></span>
-    <span></span>
-    <span></span>
-  </span>
-
+      
       </nav>
     );
   }
