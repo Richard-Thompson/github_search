@@ -46,3 +46,14 @@ export function checkLanguage (language) {
       return null;
     }
   }
+
+  export function manipulateMarkDown (markdown) {
+  let output = markdown;
+  for (var i = 0 ;i < output.length;i++) {
+    if (output[i] === '#' && output[i + 1] !== '#') {
+     output = output.substr(0,i + 1) + ' ' + output.substr(i + 1, output.length - 1);
+    }
+    
+  }
+   return output;
+  }

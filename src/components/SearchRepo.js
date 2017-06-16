@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import moment from 'moment';
-import {checkLanguage} from '../helper/helperFunctions';
+import {checkLanguage, manipulateMarkDown} from '../helper/helperFunctions';
+import {getReadme} from '../actions/actions';
 import '../css/SearchRepo.css';
+
+import marked from 'marked';
+
 
 class SearchRepo extends Component {
   constructor (props) {
@@ -10,6 +15,7 @@ class SearchRepo extends Component {
       showDetails: false
     };
     this.clickHandler = this.clickHandler.bind(this);
+    this.readMeHTML = this.readMeHTML.bind(this);
   }
  
   render () {
@@ -40,28 +46,55 @@ class SearchRepo extends Component {
           <a className="full-name" href={this.props.url} > {this.props.fullName} </a>
           <a> {this.props.branch} </a>
         </div>
-        <div className="repo-details">
-          <div className="section">
-            <i className="fa fa-star-o" aria-hidden="true"/><p>{this.props.stars}</p>
+        <div>
+          <div className="repo-details">
+            <div className="section">
+              <i className="fa fa-star-o" aria-hidden="true"/><p>{this.props.stars}</p>
+            </div>
+            <div className="section">
+              <i className="fa fa fa-info-circle" aria-hidden="true"/><p>{this.props.open_issues}</p>
+            </div>
+            <div className="section">
+              <i className="fa fa fa-code-fork" aria-hidden="true"/><p>{this.props.forks}</p>
+            </div> 
           </div>
-          <div className="section">
-            <i className="fa fa fa-info-circle" aria-hidden="true"/><p>{this.props.open_issues}</p>
+          <div className="readme" dangerouslySetInnerHTML={this.readMeHTML()}>
+            
           </div>
-          <div className="section">
-            <i className="fa fa fa-code-fork" aria-hidden="true"/><p>{this.props.forks}</p>
-           </div> 
-          
         </div>
       </div> : null}
     </div>
     );
   }
 
+  readMeHTML () {
+    let readme = Buffer.from(this.props.readme,'base64').toString();
+    return {
+      __html: marked(manipulateMarkDown(readme))
+    }
+  }
+
   clickHandler () {
     this.setState({
       showDetails: !this.state.showDetails
     });
+    this.props.getReadme(this.props.user, this.props.name)
+   
   }
 }
 
-export default SearchRepo;
+function mapDispatchToProps (dispatch) {
+  return {
+    getReadme : (user, repo) => {
+      dispatch(getReadme(user, repo));
+    }
+  };
+}
+
+function mapStateToProps (state) {
+  return {
+    readme: state.readme
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchRepo);

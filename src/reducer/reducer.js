@@ -8,6 +8,7 @@ totalResults: 0,
 activePage:1,
 pages: [1,2,3,4,5,6,7,8,9,10],
 lastPage:null,
+readme: '',
 loading:false,
 error:null
 };
@@ -76,6 +77,20 @@ export default (prevState = initialState, action) => {
       newState.pages = newState.pages.slice(1);
       newState.pages = newState.pages.concat(newState.activePage);
     }
+  }
+
+  if (action.type === types.GET_README_REQUEST) {
+    newState.loading = false;
+  }
+
+  if (action.type === types.GET_README_SUCCESS) {
+    newState.loading = false;
+    newState.readme = action.readme;
+  }
+
+  if (action.type === types.GET_README_ERROR) {
+    newState.loading = false;
+    newState.error = action.error;
   }
   return newState;
 };

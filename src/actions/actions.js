@@ -86,3 +86,41 @@ export function checkIncreasePage () {
   };
 }
  
+export function getReadme (owner, repo) {
+  return function (dispatch) {
+    dispatch(getReadmeRequest());
+    axios
+        .get(`${ROOT}/repos/${owner}/${repo}/readme`)
+        .then((response) => {
+          axios
+              .get(response.data.git_url)
+              .then((response) => {
+                dispatch(getReadmeSuccess(response.data.content));
+              });
+        })
+        .catch((error) => {
+          dispatch(getReadmeError(error));
+        });
+
+  };
+}
+
+export function getReadmeRequest () {
+  return {
+    type: types.GET_README_REQUEST
+  };
+}
+
+export function getReadmeSuccess (README) {
+  return {
+    type: types.GET_README_SUCCESS,
+    readme: README
+  };
+}
+
+export function getReadmeError (error) {
+  return {
+    type: types.GET_README_ERROR,
+    error:error
+  };
+}
