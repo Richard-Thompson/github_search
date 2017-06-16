@@ -1,6 +1,7 @@
 .pagination{
   width: 890px;
-  margin-left:40px;
+  margin-left:auto;
+  margin-right:auto;
 }
 .pagination-container{ 
   display: flex;

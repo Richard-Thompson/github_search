@@ -22,7 +22,7 @@ class SearchPage extends Component {
   
   render () {
     return (
-      <div>
+      <div className="search-container">
           <div className="search-subnav">
               <div className="search-tab is-active">
                 Repositories

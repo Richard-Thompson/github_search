@@ -7,7 +7,7 @@ a{
 .search-card{
   display: flex;
   align-items: center;
-  margin-left:40px;
+  margin-left:20px;
   width:890px;
   border-left: 0px;
   border-right:0px;
@@ -38,7 +38,7 @@ a{
 
 .more-details{
   width:890px;
-  margin-left:40px;
+  margin-left:20px;
   border: 2px solid lightgrey;
 }
 .user-profile{

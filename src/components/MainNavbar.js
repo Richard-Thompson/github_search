@@ -14,7 +14,7 @@ class MainNavbar extends Component {
   render () {
     return (
        <nav className="nav">
-        <div className="nav-left">
+        <div className="nav-center">
           <a className="nav-item">
             <Link to="/"><i className="fa fa-github fa-3x"></i></Link>
           </a>
@@ -48,10 +48,11 @@ class MainNavbar extends Component {
             src="https://avatars3.githubusercontent.com/u/23527306?v=3"/> </Link>
 
         </div>
-
-        <div className="nav-center">
-         
-        </div>
+        <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
 
       </nav>
     );
