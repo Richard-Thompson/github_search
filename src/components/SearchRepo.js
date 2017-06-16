@@ -71,14 +71,14 @@ class SearchRepo extends Component {
     let readme = Buffer.from(this.props.readme,'base64').toString();
     return {
       __html: marked(manipulateMarkDown(readme))
-    }
+    };
   }
 
   clickHandler () {
     this.setState({
       showDetails: !this.state.showDetails
     });
-    this.props.getReadme(this.props.user, this.props.name)
+    this.props.getReadme(this.props.user, this.props.name);
    
   }
 }
