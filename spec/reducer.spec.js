@@ -224,5 +224,54 @@ describe('reducer', function () {
     expect(actual).to.not.equal(initialState);
   });
 
+  it('handles GET_README_REQUEST', function () {
+      const action = actions.getReadmeRequest();
+      const initialState = {
+        loading:false
+      };
+
+      const actual = reducer(initialState, action);
+      const expected = {
+        loading:true
+
+      };
+      expect(actual).to.eql(expected);
+      expect(actual).to.not.equal(initialState);
+    });
+
+    it('handles GET_README_SUCCESS', function () {
+      const action = actions.getReadmeSuccess('readme');
+      const initialState = {
+        loading:false,
+        readme:''
+      };
+
+      const actual = reducer(initialState, action);
+      const expected = {
+        loading:false,
+        readme: 'readme'
+
+      };
+      expect(actual).to.eql(expected);
+      expect(actual).to.not.equal(initialState);
+    });
+
+    it('handles GET_README_ERROR', function () {
+      const action = actions.getReadmeError('error');
+      const initialState = {
+        loading:false,
+        error:null
+      };
+
+      const actual = reducer(initialState, action);
+      const expected = {
+        loading:false,
+        error: 'error'
+
+      };
+      expect(actual).to.eql(expected);
+      expect(actual).to.not.equal(initialState);
+    });
+
 
 });

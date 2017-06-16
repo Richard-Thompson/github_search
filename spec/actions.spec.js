@@ -70,4 +70,27 @@ describe('actions', () => {
     });
   });
 
+  describe('getReadme', () => {
+    it('Request: returns expected action' , () => {
+      const action = actions.getReadmeRequest();
+      expect(action).to.eql({
+        type: types.GET_README_REQUEST
+      });
+    });
+    it('Success: returns expected action', () => {
+      const action = actions.getReadmeSuccess('README');
+      expect(action).to.eql({
+        type: types.GET_README_SUCCESS,
+        readme: 'README'
+      });
+    });
+    it('Error: returns expected action', () => {
+      const action = actions.getReadmeError('error');
+      expect(action).to.eql({
+        type:types.GET_README_ERROR,
+        error: 'error'
+      });
+    }); 
+  });
+
 });

@@ -80,7 +80,7 @@ export default (prevState = initialState, action) => {
   }
 
   if (action.type === types.GET_README_REQUEST) {
-    newState.loading = false;
+    newState.loading = true;
   }
 
   if (action.type === types.GET_README_SUCCESS) {
