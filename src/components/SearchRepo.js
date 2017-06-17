@@ -58,9 +58,7 @@ class SearchRepo extends Component {
               <i className="fa fa fa-code-fork" aria-hidden="true"/><p>{this.props.forks}</p>
             </div> 
           </div>
-          <div className="readme" dangerouslySetInnerHTML={this.readMeHTML()}>
-            
-          </div>
+          <div className="readme" dangerouslySetInnerHTML={this.readMeHTML()}></div>
         </div>
       </div> : null}
     </div>
@@ -74,11 +72,14 @@ class SearchRepo extends Component {
     };
   }
 
-  clickHandler () {
+  clickHandler (event) {
+    event.preventDefault();
+    this.props.getReadme(this.props.user, this.props.name);
+    // console.log(this.props.readme);
     this.setState({
       showDetails: !this.state.showDetails
     });
-    this.props.getReadme(this.props.user, this.props.name);
+
    
   }
 }

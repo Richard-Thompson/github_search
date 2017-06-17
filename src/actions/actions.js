@@ -96,7 +96,10 @@ export function getReadme (owner, repo) {
               .get(response.data.git_url)
               .then((response) => {
                 dispatch(getReadmeSuccess(response.data.content));
-              });
+              })
+              .catch((error) => {
+                dispatch(getReadmeError(error));
+              })
         })
         .catch((error) => {
           dispatch(getReadmeError(error));

@@ -46,7 +46,7 @@ class SearchPage extends Component {
                 Advance search
               </div>
           </div>
-          {this.props.loading ? null :
+          {/*{this.props.loading ? null :*/}
           <div>
             <div className="number-results">
               <strong>{' ' + this.props.totalResults} repository results</strong>
@@ -66,7 +66,7 @@ class SearchPage extends Component {
               }
             </div>
           </div>
-          }
+          {/*}*/}
           
 
       </div> 
