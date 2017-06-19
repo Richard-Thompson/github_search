@@ -44,6 +44,10 @@ export function searchForRepo (searchTerm, pageNumber) {
         .then((response) => {
           dispatch(searchForRepoSuccess(response.data.items, response.data.total_count, pageNumber, response.headers.link));
         })
+        .then(() => {
+          dispatch(checkIncreasePage());
+          dispatch(checkDecreasePage());
+        })
         .catch((error) => {
           dispatch(searchForRepoError(error));
         });

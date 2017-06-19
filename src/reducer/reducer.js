@@ -6,7 +6,7 @@ repoData:[],
 searchResults:[],
 totalResults: 0,
 activePage:1,
-pages: [1,2,3,4,5,6,7,8,9,10],
+pages: [1,2,3],
 lastPage:null,
 readme: '',
 loading:false,
@@ -36,6 +36,7 @@ export default (prevState = initialState, action) => {
   
    if (action.type === types.GET_SEARCH_RESULTS_SUCCESS) {
     const extractedLastPage = extractLastPage(action.lastPage);
+   
     newState.loading = false;
     newState.searchResults = action.searchResults;
     newState.totalResults = action.totalCount;

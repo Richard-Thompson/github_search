@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {searchForRepo, checkIncreasePage, checkDecreasePage} from '../actions/actions';
+import {searchForRepo} from '../actions/actions';
 import '../css/Pagination.css';
 
 class Pagination extends Component {
@@ -34,13 +34,13 @@ class Pagination extends Component {
 
   prevPage () {
       this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber - 1);
-      this.props.checkDecreasePage();
+      
     }
   
 
   nextPage () {
      this.props.fetchAnotherPage(this.props.searchTerm, this.props.pageNumber + 1);
-     this.props.checkIncreasePage();
+    
   }
 }
 
@@ -48,12 +48,6 @@ function mapDispatchToProps (dispatch) {
   return {
     fetchAnotherPage: (searchTerm, pageNumber) => {
       dispatch(searchForRepo(searchTerm, pageNumber));
-    },
-    checkIncreasePage: () => {
-      dispatch(checkIncreasePage());
-    },
-    checkDecreasePage: () => {
-      dispatch(checkDecreasePage());
     }
   };
 }

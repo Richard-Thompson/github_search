@@ -87,7 +87,7 @@ describe('reducer', function () {
       totalResults: 500,
       activePage: 4,
       pages: [1,2,3,4,5,6,7,8,9,10],
-      lastPage:'100'
+      lastPage:100
       
 
     };
@@ -141,9 +141,9 @@ describe('reducer', function () {
       loading: false,
       searchResults: 'hello',
       totalResults: 500,
-      activePage: '100',
+      activePage: 100,
       pages: [1,2,3,4,5,6,7,8,9,10],
-      lastPage:'100'
+      lastPage:100
       
 
     };
