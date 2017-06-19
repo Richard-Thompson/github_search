@@ -8,7 +8,10 @@ export function extractLastPage (data) {
   
   for (var i = 0; i < pageOptions.length; i++) {
     if (pageOptions[i].indexOf('last') !== -1) {
-       obj['last'] = pageOptions[i].substring(92,pageOptions[i].length - 13);
+      
+     let numbers = pageOptions[i].match(/\d+/g);
+     
+       obj['last'] = parseInt(numbers[1]);
     }
   }
   return obj;
