@@ -67,6 +67,7 @@ class SearchRepo extends Component {
 
   readMeHTML () {
     let readme = Buffer.from(this.props.readme,'base64').toString();
+    console.log(readme);
     return {
       __html: marked(manipulateMarkDown(readme))
     };

@@ -103,7 +103,7 @@ export function getReadme (owner, repo) {
               })
               .catch((error) => {
                 dispatch(getReadmeError(error));
-              })
+              });
         })
         .catch((error) => {
           dispatch(getReadmeError(error));

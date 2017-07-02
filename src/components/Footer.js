@@ -3,7 +3,7 @@ import '../css/Footer.css';
 class Footer extends Component {
   render () {
     return (
-      <div className="footer-container">
+      <div className="footer-container is-hidden-mobile is-hidden-tablet-only">
         <div className="copyright">
           2017 Github, Inc.
         </div>

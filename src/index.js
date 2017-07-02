@@ -6,8 +6,10 @@ import {Provider} from 'react-redux';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 import {createLogger} from 'redux-logger';
 
+import './css/index.css';
 import 'bulma/css/bulma.css';
 import 'font-awesome/css/font-awesome.css';
+
 
 import App from './components/App';
 import ProfilePage from './components/ProfilePage';

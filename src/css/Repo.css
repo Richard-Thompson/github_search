@@ -5,7 +5,7 @@
   color: #0366D6;
 }
 .description{
-  width: 300px;
+  width: 60%;
   color:grey;
 }
 .details{
@@ -90,4 +90,13 @@ div.c-plus{
 } 
 .updated{
   margin-left:20px;
+}
+
+@media only screen and (max-width:768px) {
+  .card{
+    font-size:9pt;
+  }
+  .title{
+    font-size:14pt;
+  }
 }

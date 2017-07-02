@@ -21,25 +21,30 @@ class ProfilePage extends Component {
   render () {
     
     return (
-      <div className="container">
-        <div className="user">
+      <div className="container columns">
+        <div className="user column is-hidden-mobile is-one-third-desktop is-hidden-tablet-only">
           <img
             className="user-avatar"
             src="https://avatars3.githubusercontent.com/u/23527306?v=3"/>
-          <p className="name">Richard-Thompson</p>
+          <p className="profile-name">Richard-Thompson</p>
           <p className="bio">Add a bio</p>
-          <a className="button edit-profile">Edit profile</a>
-          <div className="space"></div>
-          <p><strong>Organizations</strong></p>
-          <img
-            className="org-img"
-            src="https://avatars3.githubusercontent.com/u/16081355?v=3"/>
-
+          <div className="edit-profile-wrapper">
+            <a className="button edit-profile">Edit profile</a>
+          </div>
+          <div className="space-wrapper">
+            <div className="space"></div>
+          </div>
+          <p className="organizations"><strong>Organizations</strong></p>
+          <div className="org-img-wrapper">
+            <img
+               className="org-img"
+               src="https://avatars3.githubusercontent.com/u/16081355?v=3"/>
+          </div>
         </div>
 
-        <div className="repos">
+        <div className="repos column is-full-mobile is-full-tablet is-two-thirds-desktop">
 
-          <div className="subnav">
+          <div className="subnav is-full-mobile is-full-tablet is-full-desktop">
             <div className="tab">
               Overview
             </div>
@@ -57,14 +62,14 @@ class ProfilePage extends Component {
             </div>
           </div>
 
-          <div className="search">
+          <div className="search is-full-tablet is-three-thirds-desktop">
             <input className="repo-search-box" type="text" onChange={this.onChange} value={this.state.input} placeholder="Search repositories..."/>
-            <a className="button">Type: <strong>All</strong></a>
-            <a className="button">Language: <strong>All</strong></a>
-            <a className="button green-button">New</a>
+            <a className="button is-hidden-mobile">Type: <strong>All</strong></a>
+            <a className="button is-hidden-mobile">Language: <strong>All</strong></a>
+            <a className="button is-hidden-mobile green"><strong>New</strong></a>
           </div>
 
-          <div className="repo-list">
+          <div className="repo-list column is-three-thirds">
             <RepoList searchTerm={this.state.input} repos={this.props.repos}/>
           </div>
         </div>
