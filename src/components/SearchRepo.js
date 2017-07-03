@@ -34,7 +34,7 @@ class SearchRepo extends Component {
            <p className="last-updated">Updated {lastUpdate} days ago </p>
         </div>
         
-        <div className="language">
+        <div className="language is-hidden-mobile is-hidden-tablet-only">
             {checkLanguage(this.props.language)}
         </div>
       </div>
@@ -43,8 +43,8 @@ class SearchRepo extends Component {
         <div className="user-profile">
           <img className="users-avatar" src={this.props.avatar}/>
           <p className="name">{this.props.user}</p>
-          <a className="full-name" href={this.props.url} > {this.props.fullName} </a>
-          <a> {this.props.branch} </a>
+          <a className="full-name is-hidden-mobile" href={this.props.url} > {this.props.fullName} </a>
+          <a className="is-hidden-mobile"> {this.props.branch} </a>
         </div>
         <div>
           <div className="repo-details">

@@ -15,18 +15,21 @@ class Pagination extends Component {
     return (
       <div className="pagination-container">
         <div className ="prev" onClick={this.prevPage}>Prev</div>
-        {this.props.pages.map((pageNumber, i) => {
-          if (pageNumber === this.props.activePage) {
-            return (
-              <div key={i} className="active-page">{pageNumber}</div>
-            );
-          }
-          else {
-            return (
-              <div key={i} className="page">{pageNumber}</div>
-            );
-          }
-        })}
+        <div className="page is-hidden-tablet is-hidden-desktop">{this.props.activePage}</div>
+        <div className="pages is-hidden-mobile">
+            {this.props.pages.map((pageNumber, i) => {
+              if (pageNumber === this.props.activePage) {
+                return (
+                  <div key={i} className="active-page">{pageNumber}</div>
+                );
+              }
+              else {
+                return (
+                  <div key={i} className="page">{pageNumber}</div>
+                );
+              }
+            })}
+          </div>
         <div className="next" onClick={this.nextPage}>Next</div>
       </div>
     );

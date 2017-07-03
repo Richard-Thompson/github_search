@@ -42,7 +42,7 @@ class SearchPage extends Component {
               <div className="search-tab">
                 Users
               </div>
-              <div className="adv-search">
+              <div className="adv-search is-hidden-mobile">
                 Advance search
               </div>
           </div>

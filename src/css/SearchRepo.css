@@ -7,8 +7,7 @@ a{
 .search-card{
   display: flex;
   align-items: center;
-  margin-left:20px;
-  width:890px;
+  width:100%;
   border-left: 0px;
   border-right:0px;
   border-top:1px solid lightgrey;
@@ -18,15 +17,21 @@ a{
   padding-left:0;
 }
 .overview{
-  width:450px;
+  width:50%;
+  margin-left:10%;
+}
+div.details{
+  width:100px;
+  color:grey;
 }
 .title{
   color: #0366D6;
 }
-.search-description{
+p.search-description{
   font-size:9.5pt;
   color:grey;
-  width: 350px;
+  width: 100%;
+  padding-right:0;
 }
 .last-updated{
   color: grey;
@@ -37,12 +42,11 @@ a{
 
 
 .more-details{
-  width:890px;
-  margin-left:20px;
+  width:100%;
   border: 2px solid lightgrey;
 }
 .user-profile{
-  width: 890px;
+  width: 100%;
   height:75px;
   border-bottom:1px solid lightgrey;
   display: flex;
@@ -54,11 +58,12 @@ a{
   border-radius: 5%;
 }
 .name{
-  margin-left:50px;
+  margin-left:20px;
   color: grey;
 }
 a.full-name{
-  margin-right: 200px;
+  margin-left: 20px;
+  margin-right:50px;
 }
 a:hover{
   color: #0366D6;
@@ -66,13 +71,12 @@ a:hover{
 }
 .repo-details{
   display: flex;
-  margin-left:105px;
 }
 .section{
   display: flex;
-  justify-content: center;
-  padding:15px;
-  padding-right: 130px;
+  justify-content: left;
+  padding:2%;
+  padding-right: 10%;
   
 }
 
@@ -96,3 +100,19 @@ h6{
 }
 
 
+@media only screen and (max-width:768px) {
+  .overview{
+    width:100%;
+  }
+  div.search-tab{
+   font-size:8pt;
+ }
+}
+
+@media only screen 
+and (min-width:769px)
+and (max-width:1050px){
+ div.search-tab{
+   font-size:8pt;
+ }
+}
